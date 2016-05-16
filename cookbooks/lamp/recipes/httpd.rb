@@ -4,7 +4,7 @@ end
 
 group 'www' do
   action :modify
-  members 'ec2-user'
+  members 'ubunut'
   append true
 end
 

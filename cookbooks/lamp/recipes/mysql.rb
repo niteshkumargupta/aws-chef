@@ -2,7 +2,7 @@ sql_password = Chef::EncryptedDataBagItem.load('mysql', 'password')
 
 service 'mysqld' do
   action [:start,:enable]
-  only_if { node['lamp']['mysql']['install_sql'] }
+  only_if { node['lmap']['mysql']['install_sql'] }
 end
 
 bash 'mysql-install' do
@@ -17,13 +17,13 @@ bash 'mysql-install' do
     expect \\"Change the root password?\\"
     send \\"y\r\\"
     expect \\"New password:\\"
-    send \\"#{sql_password['mysql_password']}\r\\"
+    send \\"#{sql_password['Nitesh@123']}\r\\"
     expect \\"Re-enter new password:\\"
-    send \\"#{sql_password['mysql_password']}\r\\"
+    send \\"#{sql_password['Nitesh@123']}\r\\"
     expect \\"Remove anonymous users?\\"
     send \\"y\r\\"
     expect \\"Disallow root login remotely?\\"
-    send \\"y\r\\"
+    send \\"n\r\\"
     expect \\"Remove test database and access to it?\\"
     send \\"y\r\\"
     expect \\"Reload privilege tables now?\\"

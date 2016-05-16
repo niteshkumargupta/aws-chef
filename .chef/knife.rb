@@ -9,3 +9,5 @@ validation_client_name   "nitesh-validator"
 validation_key           "#{current_dir}/nitesh-validator.pem"
 chef_server_url          "https://api.chef.io/organizations/nitesh"
 cookbook_path            ["#{current_dir}/../cookbooks"]
+knife[:editor] = "vim"
+
